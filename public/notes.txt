@@ -1,0 +1,17 @@
+animation on scroll:
+https://morioh.com/p/df79e7e676fa || https://www.npmjs.com/package/react-in-viewport
+https://github.com/roderickhsiao/react-in-viewport
+
+
+
+
+
+
+
+
+
+99. make greetings
+https://www.youtube.com/watch?v=PP0Os0UvMCs&ab_channel=OnlineTutorials
+
+99. 404 error
+https://www.youtube.com/watch?v=n4VXcYWvETU&ab_channel=OnlineTutorials 1:30
