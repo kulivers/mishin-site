@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+  font-family: "Algerian", sans-serif;
   display: block;
   color: white;
   width: 100%;
@@ -16,14 +17,14 @@ const Button = styled.button`
   border: 0;
   cursor: pointer;
   text-decoration: ${(props) => (props.underline ? "underline" : "none")};
-  text-decoration-color: #ea215a;
+  text-decoration-color: #f9f9fa;
   text-decoration-thickness: 0.125em;
   text-underline-offset: 1.5px;
 
   &:hover {
     text-decoration: none;
     color: white;
-    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background: linear-gradient(-45deg, #44b2c4, #2853a2, #338aff, #44b2c4);
     background-size: 600%;
     -webkit-animation: anime 3s linear infinite;
     animation: anime 3s linear infinite;

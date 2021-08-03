@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Video from "./MVI_0746.mov";
+import Video from "./1063233085-preview.mp4";
 
 const HomeContainer = styled.section`
   position: relative;
@@ -22,8 +22,8 @@ const HomeContainer = styled.section`
     z-index: 2;
     background: linear-gradient(
         180deg,
-        rgb(47, 43, 43) 0%,
-        rgba(248, 0, 0, 0.2) 100%
+        rgba(255, 255, 255, 0.17) 0%,
+        rgba(0, 248, 227, 0.2) 100%
       ),
       linear-gradient(180deg, rgba(128, 117, 44, 0.2) 0%, transparent 100%);
   }

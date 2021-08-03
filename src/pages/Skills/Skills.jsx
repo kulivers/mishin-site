@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProgressBarWithViewport from "../../components/ProgressBarWithViewport";
+import ProgressBarWithViewport from "./ProgressBarWithViewport";
 
 const Container = styled.section`
   font-family: "Poppins", sans-serif;

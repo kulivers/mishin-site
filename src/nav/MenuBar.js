@@ -5,22 +5,9 @@ import GradButtonWithScrollLink from "./elements/GradButtonWithScrollLink";
 import BurgerB from "./elements/Burger";
 import useScrollPosition from "use-scroll-position";
 
-export const MenuBar = ({ homeHeight }) => {
-  const [isOpen, toggleOpen] = useState(false);
-  const scrollPosition = useScrollPosition();
-  const [isTransparent, setTransparent] = useState(false);
-
-  useEffect(() => {
-    if (scrollPosition < homeHeight - 80) {
-      setTransparent(true);
-    } else {
-      setTransparent(false);
-    }
-  }, [homeHeight, scrollPosition]);
-
+const Links = ({ isOpen, toggleOpen, ...props }) => {
   return (
-    <MainMenu isOpen={isOpen} isTransparent={isTransparent} id="navbar">
-      <Logo name="Coolson" />
+    <React.Fragment>
       <NavLinks isOpen={isOpen}>
         <GradButtonWithScrollLink
           onClick={() => {
@@ -28,7 +15,7 @@ export const MenuBar = ({ homeHeight }) => {
           }}
           to="projects"
         >
-          projects
+          о компании
         </GradButtonWithScrollLink>
         <GradButtonWithScrollLink
           onClick={() => {
@@ -36,7 +23,7 @@ export const MenuBar = ({ homeHeight }) => {
           }}
           to="skills"
         >
-          skills
+          услуги
         </GradButtonWithScrollLink>
 
         <GradButtonWithScrollLink
@@ -45,7 +32,7 @@ export const MenuBar = ({ homeHeight }) => {
           }}
           to="about"
         >
-          about
+          лицензии
         </GradButtonWithScrollLink>
 
         <GradButtonWithScrollLink
@@ -54,22 +41,50 @@ export const MenuBar = ({ homeHeight }) => {
           }}
           to="contacts"
         >
-          contacts
+          контакты
         </GradButtonWithScrollLink>
       </NavLinks>
-      <BurgerB
-        onClick={() => {
-          toggleOpen(!isOpen);
-        }}
-        isOpen={isOpen}
-      />
-    </MainMenu>
+    </React.Fragment>
+  );
+};
+
+export const MenuBar = (props) => {
+  const [isOpen, toggleOpen] = useState(false);
+  const scrollPosition = useScrollPosition();
+  const [isTransparent, setTransparent] = useState(true);
+  const [homeHeight, setHomeHeight] = useState(0);
+
+  useEffect(() => {
+    const height = document.getElementById("home").clientHeight;
+    setHomeHeight(height);
+    if (scrollPosition < homeHeight - 80) {
+      setTransparent(true);
+    } else {
+      setTransparent(false);
+    }
+  }, [homeHeight, scrollPosition]);
+
+  return (
+    <Container isOpen={isOpen} isTransparent={isTransparent} id="navbar">
+      <LogoWrapper>
+        <Logo>ГазИзЖопы</Logo>
+      </LogoWrapper>
+      <Links isOpen={isOpen} toggleOpen={toggleOpen} />
+      <BurgerWrapper>
+        <BurgerB
+          onClick={() => {
+            toggleOpen(!isOpen);
+          }}
+          isOpen={isOpen}
+        />
+      </BurgerWrapper>
+    </Container>
   );
 };
 export default MenuBar;
 
-const MainMenu = styled.nav`
-  background: ${(props) => (props.isTransparent ? "transparent" : "#2f2b2b")};
+const Container = styled.nav`
+  background: ${(props) => (props.isTransparent ? "transparent" : "#1173d9")};
   transition: 0.3s;
   z-index: 9999;
   top: 0;
@@ -81,7 +96,7 @@ const MainMenu = styled.nav`
   min-height: 8vh;
   font-family: "Poppins", sans-serif;
   // position: ${(props) => (props.isOpen ? "fixed" : "relative")};
-  @media (max-width: 780px) {
+  @media (max-width: 880px) {
     display: flex;
     justify-content: space-between;
   }
@@ -101,10 +116,23 @@ const NavLinks = styled.ul`
     height: 100vh;
     width: 100%;
     top: 0;
-    background-color: #2f2b2b;
+    background-color: #007fff;
     margin-top: 0;
     transform: ${(props) =>
       props.isOpen ? "translateX(0)" : "translateX(100%)"};
     transition: transform 0.3s ease-in;
   }
+`;
+
+const LogoWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 16px;
+  max-width: 265px;
+`;
+
+const BurgerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

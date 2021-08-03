@@ -1,0 +1,89 @@
+.name {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: Roboto;
+    /*text-transform: uppercase;*/
+    letter-spacing: 2px;
+    margin: auto 0;
+    transition: 0.5s;
+    /*background: linear-gradient(-45deg, #ffffff, #103cd2, #ffffff, #103cd2);*/
+    background: white;
+    background-size: 600%;
+    background-position: 90%;
+    /*noinspection CssInvalidPropertyValue*/
+    background-clip: text;
+    -webkit-background-clip: text;
+    cursor: pointer;
+}
+
+.name:hover {
+    color: transparent;
+    font-size: 2.2rem;
+}
+
+
+@media (max-width: 350px) {
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .name:hover {
+        font-size: 1.5rem;
+    }
+
+    .bike-logo {
+        width: 50px;
+    }
+}
+
+.logo-container {
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 265px;
+}
+
+.bike-logo {
+    max-width: 70px;
+    cursor: pointer;
+    display: block;
+    max-height: 80px;
+    transition: 0.5s;
+}
+
+.bike-logo g {
+    transform: translateX(20px);
+}
+
+.bike-logo g #RightWheel,
+#LeftWheel {
+    animation: wheel 1s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-fill-mode: both;
+}
+
+.bike-logo g #Other {
+    animation: bike 1s ease-out alternate infinite;
+    transform-origin: bottom;
+}
+
+@keyframes bike {
+    from {
+        transform: rotateX(0);
+    }
+    to {
+        transform: rotateX(20deg);
+    }
+}
+
+@keyframes wheel {
+    from {
+        transform: rotateZ(0deg) rotateX(10deg);
+    }
+    to {
+        transform: rotateZ(360deg) rotateX(10deg);
+    }
+}

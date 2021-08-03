@@ -7,9 +7,9 @@ const StyledLinkS = styled(LinkS)`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 780px) {
-    width: 100%;
-  }
+  //@media (max-width: 780px) {
+  //  width: 100%;
+  //}
 `;
 
 const ScrollButton = (props) => {
