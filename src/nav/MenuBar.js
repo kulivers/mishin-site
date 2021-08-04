@@ -74,7 +74,7 @@ export const MenuBar = ({ homeHeight }) => {
 
   return (
     <Container isOpen={isOpen} isTransparent={isTransparent} id="navbar">
-      <Logo>ГазИзЖопы</Logo>
+      <Logo>ГазУкрали</Logo>
       <Links isOpen={isOpen} toggleOpen={toggleOpen} />
       <BurgerWrapper>
         <BurgerB

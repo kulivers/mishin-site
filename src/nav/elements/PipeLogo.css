@@ -9,7 +9,7 @@
 }
 
 .pipe-logo g #Arrow {
-    animation: wheel 2s infinite linear alternate;
+    animation: wheel 0.5s infinite linear alternate;
     transform-origin: center;
     transform-box: fill-box;
     animation-fill-mode: forwards;

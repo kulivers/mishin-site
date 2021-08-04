@@ -6,6 +6,7 @@ import {
   ThemeProvider,
   createTheme,
 } from "@material-ui/core/styles";
+import { purple } from "@material-ui/core/colors";
 
 const HomeContainer = styled.section`
   position: relative;
@@ -53,61 +54,70 @@ const VideoBg = styled.video`
 `;
 
 //https://material-ui.com/ru/customization/theming/#responsivefontsizes-theme-options-theme
-const customTheme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 800,
-      lg: 1280,
-      xl: 1920,
-    },
+//https://material-ui.com/ru/customization/typography/
+//https://codesandbox.io/s/op1vo?file=/demo.js
+//https://material-ui.com/ru/customization/theming/#createtheme-options-args-theme
+// https://codesandbox.io/s/elastic-gareth-7ro57?file=/src/theme.js:249-255
+// https://material-ui.com/customization/color/#official-color-tool
+//https://material-ui.com/ru/customization/breakpoints/#theme-breakpoints-down-key-media-query
 
-    palette: {
-      secondary: {
-        main: "#2bb40c",//doesnt work ;(((
-      },
-    },
-  },
-});
-const responsiveFontSizesTheme = responsiveFontSizes(customTheme);
+// const customTheme = createTheme({
+//   typography: {
+//     fontFamily: "fantasy",
+//   },
+//   breakpoints: {
+//     values: {
+//       xs: 0,
+//       sm: 400,
+//       md: 960,
+//       lg: 1280,
+//       xl: 1920,
+//     },
+//   },
+// });
+// const responsiveFontSizesTheme = responsiveFontSizes(customTheme);
 
 const useStyles = makeStyles((theme) => {
   return {
     textContainer: { color: "white", fontSize: theme },
     header: {
       [theme.breakpoints.down("sm")]: {
-        backgroundColor: theme.palette.secondary.main,
+        fontSize: "2rem",
       },
     },
-    subText: { marginTop: "5%" },
+    subText: {
+      marginTop: "5%",
+      [theme.breakpoints.only("xs")]: {
+        fontSize: "1rem",
+      },
+    },
   };
 });
 
 const Home = () => {
   const styles = useStyles();
   return (
-    <ThemeProvider theme={responsiveFontSizesTheme}>
-      <HomeContainer id="home">
-        <HomeBg>
-          <VideoBg autoPlay loop muted src={Video} type="MVI_0746.mov/" />
-        </HomeBg>
-        <Container maxWidth={"md"} className={styles.textContainer}>
-          <Typography className={styles.header} variant={"h2"}>
-            Мособлгаз — крупнейшее газораспреде­лительное предприятие России
+    // <ThemeProvider theme={}>
+    <HomeContainer id="home">
+      <HomeBg>
+        <VideoBg autoPlay loop muted src={Video} type="MVI_0746.mov/" />
+      </HomeBg>
+      <Container maxWidth={"md"} className={styles.textContainer}>
+        <Typography className={styles.header} variant={"h2"}>
+          Мособлгаз — крупнейшее газораспреде­лительное предприятие России
+        </Typography>
+        <Box>
+          <Typography className={styles.subText} variant={"h6"}>
+            Подключаем газ жителям Московской области, ремонтируем и
+            устанавливаем оборудование, строим котельные, обслуживаем крупные
+            производства, вообще мы молодцы красавцы, тут еще подпишем нормально
+            так и по кайфу будет, смотря сколько текста, шрифты и размещение
+            смотря как будет текста
           </Typography>
-          <Box>
-            <Typography className={styles.subText} variant={"h6"}>
-              Подключаем газ жителям Московской области, ремонтируем и
-              устанавливаем оборудование, строим котельные, обслуживаем крупные
-              производства, вообще мы молодцы красавцы, тут еще подпишем
-              нормально так и по кайфу будет, смотря сколько текста, шрифты и
-              размещение смотря как будет текста
-            </Typography>
-          </Box>
-        </Container>
-      </HomeContainer>
-    </ThemeProvider>
+        </Box>
+      </Container>
+    </HomeContainer>
+    // </ThemeProvider>
   );
 };
 export default Home;
