@@ -45,24 +45,25 @@ const About = ({ inViewport, forwardedRef, enterCount }) => {
   };
 
   return (
-    <Container id="about">
-      <TextInformatonBlock>
-        <H1>About me</H1>
-        <H3>Interactive Front-end developer.</H3>
-        <P
-          ref={forwardedRef}
-          inViewport={inViewport}
-          isFirstTimeInViewPort={isFirstTimeInViewPort()}
-        >
-          I'm Riccardo Zanutta, a 22-year-old Italian Freelance Front-end
-          developer. I'm a weird guy who likes making weird things with web
-          technologies. I like to resolve design problems, create smart user
-          interface and imagine useful interaction, developing rich web
-          experiences & web applications. When not working or futzing around
-          with code, I study how to escape from University. Actually for hire.
-        </P>
-      </TextInformatonBlock>
-      <SomeOtherBlock>some other Block</SomeOtherBlock>
+    <Container id="about" style={{ backgroundColor: "lightblue" }}>
+      О компании
+      {/*<TextInformatonBlock>*/}
+      {/*  <H1>About me</H1>*/}
+      {/*  <H3>Interactive Front-end developer.</H3>*/}
+      {/*  <P*/}
+      {/*    ref={forwardedRef}*/}
+      {/*    inViewport={inViewport}*/}
+      {/*    isFirstTimeInViewPort={isFirstTimeInViewPort()}*/}
+      {/*  >*/}
+      {/*    I'm Riccardo Zanutta, a 22-year-old Italian Freelance Front-end*/}
+      {/*    developer. I'm a weird guy who likes making weird things with web*/}
+      {/*    technologies. I like to resolve design problems, create smart user*/}
+      {/*    interface and imagine useful interaction, developing rich web*/}
+      {/*    experiences & web applications. When not working or futzing around*/}
+      {/*    with code, I study how to escape from University. Actually for hire.*/}
+      {/*  </P>*/}
+      {/*</TextInformatonBlock>*/}
+      {/*<SomeOtherBlock>some other Block</SomeOtherBlock>*/}
     </Container>
   );
 };

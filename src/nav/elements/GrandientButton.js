@@ -9,12 +9,12 @@ const Button = styled.button`
   text-align: center;
   padding: 16px;
   letter-spacing: 1px;
-  border-radius: 5px;
+  border-radius: 30px;
   line-height: 1;
   font-size: medium;
   background-color: transparent;
   text-transform: uppercase;
-  border: 0;
+  border: 1px rgba(255, 255, 255, 0.29) solid;
   cursor: pointer;
   text-decoration: ${(props) => (props.underline ? "underline" : "none")};
   text-decoration-color: #f9f9fa;
@@ -23,8 +23,8 @@ const Button = styled.button`
 
   &:hover {
     text-decoration: none;
-    color: white;
-    background: linear-gradient(-45deg, #44b2c4, #2853a2, #338aff, #44b2c4);
+    color: #012bff;
+    background: linear-gradient(-45deg, #8fcdda, #7896c7, #96b5e3, #ffffff);
     background-size: 600%;
     -webkit-animation: anime 3s linear infinite;
     animation: anime 3s linear infinite;
@@ -51,6 +51,10 @@ const Button = styled.button`
       }
     }
   }
+
+  @media (max-width: 780px) {
+    border: 0;
+  }
 `;
 const GradientButton = ({ children, underline, ...props }) => {
   // console.clear();
@@ -61,4 +65,5 @@ const GradientButton = ({ children, underline, ...props }) => {
     </Button>
   );
 };
+
 export default GradientButton;

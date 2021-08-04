@@ -1,0 +1,27 @@
+.pipe-logo {
+    max-width: 70px;
+    /*background: rgba(255, 0, 12, 0.62);*/
+    padding: 12px 12px 12px 12px;
+    cursor: pointer;
+    display: block;
+    max-height: 70px;
+    transition: 0.5s;
+}
+
+.pipe-logo g #Arrow {
+    animation: wheel 2s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-fill-mode: forwards;
+
+}
+
+
+@keyframes wheel {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(245deg);
+    }
+}

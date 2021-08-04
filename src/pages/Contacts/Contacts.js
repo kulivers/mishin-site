@@ -6,6 +6,6 @@ const Container = styled.section`
 `;
 
 const Contacts = (props) => {
-  return <Container id="contacts">Contacts</Container>;
+  return <Container id="contacts">Контакты</Container>;
 };
 export default Contacts;

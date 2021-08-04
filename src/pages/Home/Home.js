@@ -1,5 +1,11 @@
 import styled from "styled-components";
 import Video from "./1063233085-preview.mp4";
+import { Box, Container, makeStyles, Typography } from "@material-ui/core";
+import {
+  responsiveFontSizes,
+  ThemeProvider,
+  createTheme,
+} from "@material-ui/core/styles";
 
 const HomeContainer = styled.section`
   position: relative;
@@ -28,7 +34,6 @@ const HomeContainer = styled.section`
       linear-gradient(180deg, rgba(128, 117, 44, 0.2) 0%, transparent 100%);
   }
 `;
-
 const HomeBg = styled.div`
   position: absolute;
   top: 0;
@@ -47,26 +52,62 @@ const VideoBg = styled.video`
   background: #232a34;
 `;
 
-const HomeContent = styled.div`
-  z-index: 3;
-  max-width: 1200px;
-  position: absolute;
-  padding: 8px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+//https://material-ui.com/ru/customization/theming/#responsivefontsizes-theme-options-theme
+const customTheme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 800,
+      lg: 1280,
+      xl: 1920,
+    },
+
+    palette: {
+      secondary: {
+        main: "#2bb40c",//doesnt work ;(((
+      },
+    },
+  },
+});
+const responsiveFontSizesTheme = responsiveFontSizes(customTheme);
+
+const useStyles = makeStyles((theme) => {
+  return {
+    textContainer: { color: "white", fontSize: theme },
+    header: {
+      [theme.breakpoints.down("sm")]: {
+        backgroundColor: theme.palette.secondary.main,
+      },
+    },
+    subText: { marginTop: "5%" },
+  };
+});
 
 const Home = () => {
+  const styles = useStyles();
   return (
-    <HomeContainer id="home">
-      <HomeBg>
-        <VideoBg autoPlay loop muted src={Video} type="MVI_0746.mov/" />
-      </HomeBg>
-      <HomeContent>
-        <h1 style={{ color: "wheat" }}>шото написано</h1>
-      </HomeContent>
-    </HomeContainer>
+    <ThemeProvider theme={responsiveFontSizesTheme}>
+      <HomeContainer id="home">
+        <HomeBg>
+          <VideoBg autoPlay loop muted src={Video} type="MVI_0746.mov/" />
+        </HomeBg>
+        <Container maxWidth={"md"} className={styles.textContainer}>
+          <Typography className={styles.header} variant={"h2"}>
+            Мособлгаз — крупнейшее газораспреде­лительное предприятие России
+          </Typography>
+          <Box>
+            <Typography className={styles.subText} variant={"h6"}>
+              Подключаем газ жителям Московской области, ремонтируем и
+              устанавливаем оборудование, строим котельные, обслуживаем крупные
+              производства, вообще мы молодцы красавцы, тут еще подпишем
+              нормально так и по кайфу будет, смотря сколько текста, шрифты и
+              размещение смотря как будет текста
+            </Typography>
+          </Box>
+        </Container>
+      </HomeContainer>
+    </ThemeProvider>
   );
 };
 export default Home;

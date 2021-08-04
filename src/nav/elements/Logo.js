@@ -1,7 +1,8 @@
-import { ReactComponent as BikeLogo } from "./undraw_Ride_a_bicycle_2yok 12.svg";
+import { ReactComponent as PipeLogo } from "./pressure-gauge-with-arrow.svg";
 import { animateScroll } from "react-scroll";
 import "./Logo.css";
 import React from "react";
+import "./PipeLogo.css";
 
 const Logo = ({ children }) => {
   return (
@@ -11,7 +12,8 @@ const Logo = ({ children }) => {
         animateScroll.scrollToTop();
       }}
     >
-      <BikeLogo className="bike-logo" />
+      <PipeLogo className="pipe-logo" />
+      {/*<BikeLogo className="bike-logo" />*/}
       <span className="name">{children}</span>
 
       {/*{name.split("").map((char, index) => {*/}
