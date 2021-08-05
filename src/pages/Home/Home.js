@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import Video from "./1063233085-preview.mp4";
-import { Box, Container, makeStyles, Typography } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  createMuiTheme,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import {
   responsiveFontSizes,
   ThemeProvider,
@@ -60,22 +66,19 @@ const VideoBg = styled.video`
 // https://codesandbox.io/s/elastic-gareth-7ro57?file=/src/theme.js:249-255
 // https://material-ui.com/customization/color/#official-color-tool
 //https://material-ui.com/ru/customization/breakpoints/#theme-breakpoints-down-key-media-query
+//
+// const breakpointValues = {
+//   xs: 0,
+//   sm: 200,
+//   md: 700,
+//   lg: 992,
+//   xl: 1200,
+// };
 
-// const customTheme = createTheme({
-//   typography: {
-//     fontFamily: "fantasy",
-//   },
-//   breakpoints: {
-//     values: {
-//       xs: 0,
-//       sm: 400,
-//       md: 960,
-//       lg: 1280,
-//       xl: 1920,
-//     },
-//   },
+// const customTheme = createMuiTheme({
+//   breakpoints: { values: breakpointValues },
+//   typography: { fontFamily: "fantasy" },
 // });
-// const responsiveFontSizesTheme = responsiveFontSizes(customTheme);
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -97,7 +100,6 @@ const useStyles = makeStyles((theme) => {
 const Home = () => {
   const styles = useStyles();
   return (
-    // <ThemeProvider theme={}>
     <HomeContainer id="home">
       <HomeBg>
         <VideoBg autoPlay loop muted src={Video} type="MVI_0746.mov/" />
@@ -117,7 +119,6 @@ const Home = () => {
         </Box>
       </Container>
     </HomeContainer>
-    // </ThemeProvider>
   );
 };
 export default Home;

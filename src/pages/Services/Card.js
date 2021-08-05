@@ -22,7 +22,7 @@ export const MediaCard = ({ image, title, header, subText, ...props }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card raised className={classes.root}>
       <CardActionArea>
         <CardMedia className={classes.media} image={image} title={title} />
         <CardContent>

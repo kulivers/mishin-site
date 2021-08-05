@@ -21,7 +21,7 @@ const ScrollButton = (props) => {
       smooth
       duration={500}
       spy={true}
-      offset={-80}
+      offset={-79}
       exact="true"
       onSetActive={() => {
         setActive(true);
