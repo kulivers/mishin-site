@@ -7,11 +7,7 @@ import Licenses from "./pages/Licenses/Licenses";
 // import MenuBar from "./nav";
 import { MenuBar } from "./nav/MenuBar";
 import styled from "styled-components";
-
-const ComponentsContainer = styled.div`
-  //position: static;
-  //margin-top: 77px;
-`;
+import { Divider } from "@material-ui/core";
 
 const App = () => {
   const [homeHeight, setHomeHeight] = useState(0);
@@ -22,13 +18,13 @@ const App = () => {
   return (
     <React.Fragment>
       <MenuBar homeHeight={homeHeight} />
-      <ComponentsContainer>
+      <div>
         <Home />
         <Services />
         <About />
         <Licenses />
         <Contacts />
-      </ComponentsContainer>
+      </div>
     </React.Fragment>
   );
 };

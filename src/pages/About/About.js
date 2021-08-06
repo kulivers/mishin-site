@@ -1,3 +1,4 @@
+import { Advantages } from "./Advantages";
 import styled from "styled-components";
 import handleViewport from "react-in-viewport";
 import {
@@ -14,10 +15,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     color: "white",
     background:
-      `linear-gradient(rgba(0, 0, 0, 0.3) 1%, rgba(13,20,65,1) ) ` +
+      `linear-gradient(rgba(0, 0, 0, 0.3) , rgba(13,20,65,1) ) ` +
       `,` +
       `url(${backgroundImg})` +
-      `0px -82px`,
+      `0px -78px`,
   },
   contentContainer: {
     marginTop: 0,
@@ -53,51 +54,59 @@ const About = ({ inViewport, forwardedRef, enterCount }) => {
   };
   const styles = useStyles();
   return (
-    <Container id={"about"} className={styles.root} maxWidth={"xl"}>
-      <Grid container className={styles.contentContainer} spacing={5}>
-        <Grid item md={4} className={styles.imgWrapper}>
-          <Box maxWidth={500}>
-            <img
-              src={picture1}
-              alt={"ООО СК ИЛГаз-Сервис"}
-              className={styles.img}
-            />
-          </Box>
-        </Grid>
-        <Grid item md={5} lg={6} xl={6} className={styles.textWrapper}>
-          <Typography className={styles.title} component={"h2"} variant={"h3"}>
-            О компании
-          </Typography>
-          <BluringText
-            ref={forwardedRef}
-            inViewport={inViewport}
-            isFirstTimeInViewPort={isFirstTimeInViewPort()}
-            className={styles.contentText}
-          >
-            <span
-              style={{
-                color: "#ffffff",
-                fontWeight: "bold",
-                fontSize: "1.3rem",
-              }}
+    <div>
+      <Container id={"about"} className={styles.root} maxWidth={"xl"}>
+        <Grid container className={styles.contentContainer} spacing={5}>
+          <Grid item md={4} className={styles.imgWrapper}>
+            <Box maxWidth={500}>
+              <img
+                src={picture1}
+                alt={"ООО СК ИЛГаз-Сервис"}
+                className={styles.img}
+              />
+            </Box>
+          </Grid>
+          <Grid item md={5} lg={6} xl={6} className={styles.textWrapper}>
+            <Typography
+              className={styles.title}
+              component={"h2"}
+              variant={"h3"}
             >
-              {" "}
-              ГазУкрали{" "}
-            </span>
-            - Мы любим груши, бананы, киви и даже папайя. Учим фрукты и поем про
-            них веселую песню. А какой твой фрукт самый любимый? Мы любим есть,
-            есть, есть Груши и бананы.. Мы любим есть, есть, есть Дыни и арбузы.
-            Мы любим есть, есть, есть Киви и грейпфруты Мы любим есть, есть,
-            есть Манго и папайю Мы любим есть, есть, есть Ананасы и кокосы
-            Груши, бананы, киви и даже папайя. Учим фрукты и поем про них
-            веселую песню. А какой твой фрукт самый любимый? Мы любим есть,
-            есть, есть Груши и бананы.. Мы любим есть, есть, есть Дыни и арбузы.
-            Мы любим есть, есть, есть Киви и грейпфруты Мы любим есть, есть,
-            есть Манго и папайю Мы любим есть, есть, есть Ананасы и кокосы
-          </BluringText>
+              О компании
+            </Typography>
+            <BluringText
+              ref={forwardedRef}
+              inViewport={inViewport}
+              isFirstTimeInViewPort={isFirstTimeInViewPort()}
+              className={styles.contentText}
+            >
+              <span
+                style={{
+                  color: "#ffffff",
+                  fontWeight: "bold",
+                  fontSize: "1.3rem",
+                }}
+              >
+                {" "}
+                ГазУкрали{" "}
+              </span>
+              - Мы любим груши, бананы, киви и даже папайя. Учим фрукты и поем
+              про них веселую песню. А какой твой фрукт самый любимый? Мы любим
+              есть, есть, есть Груши и бананы.. Мы любим есть, есть, есть Дыни и
+              арбузы. Мы любим есть, есть, есть Киви и грейпфруты Мы любим есть,
+              есть, есть Манго и папайю Мы любим есть, есть, есть Ананасы и
+              кокосы Груши, бананы, киви и даже папайя. Учим фрукты и поем про
+              них веселую песню. А какой твой фрукт самый любимый? Мы любим
+              есть, есть, есть Груши и бананы.. Мы любим есть, есть, есть Дыни и
+              арбузы. Мы любим есть, есть, есть Киви и грейпфруты Мы любим есть,
+              есть, есть Манго и папайю Мы любим есть, есть, есть Ананасы и
+              кокосы
+            </BluringText>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+      <Advantages />
+    </div>
   );
 };
 
