@@ -7,16 +7,15 @@ import {
 } from "@material-ui/core";
 import { MediaCard } from "./Card";
 import { services } from "./servicesInfo";
-import backgroundImg from "./7717816.jpg";
+import backgroundImg from "../../sources/7717816.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingBlock: theme.spacing(8),
     background:
-      `linear-gradient(rgba(0,12,103,0.5),rgba(0, 0, 0, 0.5))` +
+      `linear-gradient(rgba(0,12,103,0.5) 70%,rgba(0, 0, 0, 0.3)) 30%` +
       `,` +
       `url(${backgroundImg})`,
-    // backgroundColor: theme.palette.info.main,
   },
   headerContainer: {
     marginBottom: theme.spacing(10),
@@ -71,24 +70,6 @@ const OurServicesText = () => {
         {/*<Box bgcolor={"white"} p={1} />*/}
       </Box>
     </Box>
-  );
-};
-
-const NestedGrid = ({ item1, item2, item3 }) => {
-  const styles = useStyles();
-
-  return (
-    <>
-      <Grid item key={item1.header} className={styles.gridItem}>
-        {item1}
-      </Grid>
-      <Grid item key={item2.header} className={styles.gridItem}>
-        {item2}
-      </Grid>
-      <Grid item key={item3.header} className={styles.gridItem}>
-        {item3}
-      </Grid>
-    </>
   );
 };
 
