@@ -11,7 +11,7 @@ import backgroundImg from "./7717816.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingBlock: theme.spacing(5),
+    paddingBlock: theme.spacing(8),
     background:
       `linear-gradient(rgba(0,12,103,0.5),rgba(0, 0, 0, 0.5))` +
       `,` +
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: theme.palette.info.main,
   },
   headerContainer: {
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(10),
   },
   textContainer: {
     paddingBlock: theme.spacing(1),
@@ -42,8 +42,14 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     marginTop: 0,
     marginBottom: 0,
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
   },
-  gridItem: { margin: "auto" },
+  gridItem: {
+    display: "flex",
+    justifyContent: "center",
+  },
 }));
 
 const OurServicesText = () => {
@@ -68,6 +74,24 @@ const OurServicesText = () => {
   );
 };
 
+const NestedGrid = ({ item1, item2, item3 }) => {
+  const styles = useStyles();
+
+  return (
+    <>
+      <Grid item key={item1.header} className={styles.gridItem}>
+        {item1}
+      </Grid>
+      <Grid item key={item2.header} className={styles.gridItem}>
+        {item2}
+      </Grid>
+      <Grid item key={item3.header} className={styles.gridItem}>
+        {item3}
+      </Grid>
+    </>
+  );
+};
+
 const Services = () => {
   const styles = useStyles();
   return (
@@ -80,7 +104,7 @@ const Services = () => {
       <OurServicesText />
       <Grid spacing={3} className={styles.grid} container>
         {services.map(({ header, image, title, subText }) => (
-          <Grid item key={header} className={styles.gridItem}>
+          <Grid item key={header} className={styles.gridItem} lg={4} xl={4}>
             <MediaCard
               header={header}
               image={image}
