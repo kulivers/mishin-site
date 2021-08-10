@@ -24,11 +24,12 @@ const HomeContainer = styled.section`
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.17) 0%,
-        rgba(0, 248, 227, 0.2) 100%
+        rgba(17, 115, 217, 0.2) 100%
       ),
       linear-gradient(180deg, rgba(128, 117, 44, 0.2) 0%, transparent 100%);
   }
 `;
+//rgba(0, 248, 227, 0.2) 100%
 const HomeBg = styled.div`
   position: absolute;
   top: 0;

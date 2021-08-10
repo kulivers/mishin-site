@@ -1,5 +1,5 @@
 import { KeyboardArrowUpRounded } from "@material-ui/icons";
-import { Fab, makeStyles } from "@material-ui/core";
+import { Fab, makeStyles, useTheme, Zoom } from "@material-ui/core";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import useScrollPosition from "use-scroll-position";
@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     bottom: theme.spacing(3),
     right: theme.spacing(3),
     [theme.breakpoints.only("xs")]: {
-      bottom: theme.spacing(2),
-      right: theme.spacing(2),
+      bottom: theme.spacing(1),
+      right: theme.spacing(1),
     },
   },
 }));
@@ -21,8 +21,12 @@ export const FabButtonWithScrollLink = ({
   heightApperance = 190,
   ...props
 }) => {
+  const theme = useTheme();
+  const transitionDuration = {
+    enter: theme.transitions.duration.enteringScreen,
+    exit: theme.transitions.duration.leavingScreen,
+  };
   const scrollPos = useScrollPosition();
-  console.log(scrollPos);
   const classes = useStyles();
   return (
     <ScrollLink
@@ -33,15 +37,21 @@ export const FabButtonWithScrollLink = ({
       offset={-79}
       exact="true"
     >
-      <Fab
-        size="large"
-        color="secondary"
-        aria-label="up"
-        className={classes.fab}
-        {...props}
+      <Zoom
+        in={scrollPos > heightApperance}
+        timeout={transitionDuration}
+        unmountOnExit
       >
-        <KeyboardArrowUpRounded fontSize={"large"} />
-      </Fab>
+        <Fab
+          size="large"
+          color="secondary"
+          aria-label="up"
+          className={classes.fab}
+          {...props}
+        >
+          <KeyboardArrowUpRounded fontSize={"large"} />
+        </Fab>
+      </Zoom>
     </ScrollLink>
   );
 };
