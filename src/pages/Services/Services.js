@@ -7,13 +7,13 @@ import {
 } from "@material-ui/core";
 import { MediaCard } from "./Card";
 import { services } from "./servicesInfo";
-import backgroundImg from "../../sources/7717816.jpg";
+import backgroundImg from "../../other/7717816.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingBlock: theme.spacing(8),
     background:
-      `linear-gradient(rgba(0,12,103,0.5) 70%,rgba(0, 0, 0, 0.3)) 30%` +
+      `linear-gradient(rgba(0,12,103,0.5) 70%,rgba(0, 0, 0, 0.5)) 30%` +
       `,` +
       `url(${backgroundImg})`,
   },

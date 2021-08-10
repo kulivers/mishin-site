@@ -4,10 +4,8 @@ import Services from "./pages/Services/Services";
 import About from "./pages/About/About";
 import Contacts from "./pages/Contacts/Contacts";
 import Licenses from "./pages/Licenses/Licenses";
-// import MenuBar from "./nav";
 import { MenuBar } from "./nav/MenuBar";
-import styled from "styled-components";
-import { Divider } from "@material-ui/core";
+import { FabButtonWithScrollLink } from "./other/FabButtonWithScrollLink";
 
 const App = () => {
   const [homeHeight, setHomeHeight] = useState(0);
@@ -24,6 +22,7 @@ const App = () => {
         <About />
         <Licenses />
         <Contacts />
+        <FabButtonWithScrollLink />
       </div>
     </React.Fragment>
   );

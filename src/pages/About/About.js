@@ -9,13 +9,13 @@ import {
   Typography,
 } from "@material-ui/core";
 import picture1 from "./Option_0000_1.jpg";
-import backgroundImg from "../../sources/7717816.jpg";
+import backgroundImg from "../../other/7717816.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     color: "white",
     background:
-      `linear-gradient(rgba(0, 0, 0, 0.3) , rgba(13,20,65,1) ) ` +
+      `linear-gradient(rgba(0, 0, 0, 0.5) , rgba(13,20,65,1) ) ` +
       `,` +
       `url(${backgroundImg})` +
       `0px -78px`,
@@ -54,8 +54,8 @@ const About = ({ inViewport, forwardedRef, enterCount }) => {
   };
   const styles = useStyles();
   return (
-    <div>
-      <Container id={"about"} className={styles.root} maxWidth={"xl"}>
+    <div id={"about"}>
+      <Container className={styles.root} maxWidth={"xl"}>
         <Grid container className={styles.contentContainer} spacing={5}>
           <Grid item md={4} className={styles.imgWrapper}>
             <Box maxWidth={500}>
@@ -77,7 +77,7 @@ const About = ({ inViewport, forwardedRef, enterCount }) => {
             <BluringText
               ref={forwardedRef}
               inViewport={inViewport}
-              isFirstTimeInViewPort={isFirstTimeInViewPort()}
+              isfirsttimeinviewport={isFirstTimeInViewPort()}
               className={styles.contentText}
             >
               <span
@@ -113,15 +113,28 @@ const About = ({ inViewport, forwardedRef, enterCount }) => {
 const AboutWithHandleViewPort = handleViewport(About, {
   rootMargin: "-80px 0px 0px 0px",
 });
-const BluringText = styled(Typography)`
-  text-align: center;
-  opacity: $ {( {
-    inViewport
-  })= >(inViewport ? 1: 0)};
-  transition: $ {( {
-    isFirstTimeInViewPort
-  })= > isFirstTimeInViewPort ? "opacity 1s ease-in-out": "none"
-  };
+const BluringText = styled.p`
+  text-align: left;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  //margin-top: 16px
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+
+  opacity: ${({ inViewport }) => (inViewport ? 1 : 0)};
+  transition: ${({ isfirsttimeinviewport }) =>
+    isfirsttimeinviewport ? "opacity 1s ease-in-out" : "none"}
+}
+
+;
 `;
 
 export default AboutWithHandleViewPort;

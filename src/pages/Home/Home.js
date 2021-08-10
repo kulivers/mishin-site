@@ -1,18 +1,6 @@
 import styled from "styled-components";
 import Video from "./1063233085-preview.mp4";
-import {
-  Box,
-  Container,
-  createMuiTheme,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
-import {
-  responsiveFontSizes,
-  ThemeProvider,
-  createTheme,
-} from "@material-ui/core/styles";
-import { purple } from "@material-ui/core/colors";
+import { Box, Container, makeStyles, Typography } from "@material-ui/core";
 
 const HomeContainer = styled.section`
   position: relative;
@@ -55,6 +43,7 @@ const VideoBg = styled.video`
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
+  filter: blur(8px);
   object-fit: cover;
   background: #232a34;
 `;
@@ -99,10 +88,19 @@ const useStyles = makeStyles((theme) => {
 
 const Home = () => {
   const styles = useStyles();
+
   return (
     <HomeContainer id="home">
       <HomeBg>
-        <VideoBg autoPlay loop muted src={Video} type="MVI_0746.mov/" />
+        <VideoBg
+          preload="auto"
+          autoPlay
+          loop
+          muted
+          volume="0"
+          src={Video}
+          type="MVI_0746.mov/"
+        />
       </HomeBg>
       <Container maxWidth={"md"} className={styles.textContainer}>
         <Typography className={styles.header} variant={"h2"}>
