@@ -89,7 +89,7 @@ export const Advantages = (props) => {
                 <ListItemIcon>
                   <DoneIcon />
                 </ListItemIcon>
-                <ListItemText primary="Хозяину просто спасибо пожелать остается" />
+                <ListItemText primary="Хозяину просто спасибо огромное пожелать остается" />
               </ListItem>
             </List>
           </Box>

@@ -1,8 +1,7 @@
-import styled from "styled-components";
 import pic1 from "./1.jpg";
 import pic2 from "./2.jpg";
 import ImgViewer from "./ImgViewer";
-import { makeStyles, Container, Typography, Box } from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: { backgroundColor: "rgb(13, 20, 65)", color: "white", padding: 38 },
