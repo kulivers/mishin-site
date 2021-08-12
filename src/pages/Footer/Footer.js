@@ -17,12 +17,12 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "center",
       display: "flex",
       justifyContent: "center",
-
+      transform: "translateY(30px)",
       "& span": {
-        fontSize: "0.7rem",
+        fontSize: "1rem",
         fontFamily: "cursive",
-        alignSelf: "center",
-        marginBottom: "25px",
+        // alignSelf: "center",
+        marginTop: "10px",
       },
     },
   },
