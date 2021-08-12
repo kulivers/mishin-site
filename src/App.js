@@ -6,6 +6,7 @@ import Contacts from "./pages/Contacts/Contacts";
 import Licenses from "./pages/Licenses/Licenses";
 import { MenuBar } from "./nav/MenuBar";
 import { FabButtonWithScrollLink } from "./other/FabButtonWithScrollLink";
+import Footer from "./pages/Footer/Footer";
 
 const App = () => {
   const [homeHeight, setHomeHeight] = useState(0);
@@ -22,6 +23,7 @@ const App = () => {
         <About />
         <Licenses />
         <Contacts />
+        <Footer />
         <FabButtonWithScrollLink />
       </div>
     </React.Fragment>
